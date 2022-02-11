@@ -24,9 +24,15 @@ dependencies:
   flutter:
     sdk: flutter
   location_platform_interface:
-    path: ../location_platform_interface
+    git:
+      url: https://github.com/note11g/flutterlocation.git
+      ref: 67c5ffc1f0b2d9be70392bcc4ab24590ef94f3f4
+      path: packages/location_platform_interface
   location_web:
-    path: ../location_web
+    git:
+      url: https://github.com/note11g/flutterlocation.git
+      ref: f2d87dd12ca5c08603227fa7634d8803a1f6a916
+      path: packages/location_web
 dev_dependencies:
   async: ^2.5.0
   build_runner: ^1.11.5
