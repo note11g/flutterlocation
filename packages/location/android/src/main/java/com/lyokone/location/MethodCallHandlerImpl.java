@@ -163,8 +163,9 @@ final class MethodCallHandlerImpl implements MethodCallHandler {
 
     private void enableBackgroundMode(MethodCall call, Result result) {
         final Boolean enable = call.argument("enable");
+        final Boolean foreground = call.argument("foreground");
         if (locationService != null && enable != null) {
-            if (locationService.checkBackgroundPermissions()) {
+            if (locationService.checkBackgroundPermissions(foreground)) {
                 if (enable) {
                     locationService.enableBackgroundMode();
 
@@ -177,7 +178,7 @@ final class MethodCallHandlerImpl implements MethodCallHandler {
             } else {
                 if (enable) {
                     locationService.setResult(result);
-                    locationService.requestBackgroundPermissions();
+                    locationService.requestBackgroundPermissions(foreground);
                 } else {
                     locationService.disableBackgroundMode();
 

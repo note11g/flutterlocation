@@ -44,8 +44,8 @@ class Location implements LocationPlatform {
 
   /// Enables or disables service in the background mode.
   @override
-  Future<bool> enableBackgroundMode({bool? enable = true}) {
-    return LocationPlatform.instance.enableBackgroundMode(enable: enable);
+  Future<bool> enableBackgroundMode({bool? enable = true, bool isForeground = false}) {
+    return LocationPlatform.instance.enableBackgroundMode(enable: enable, isForeground: isForeground);
   }
 
   /// Gets the current location of the user.
